@@ -1,0 +1,40 @@
+{
+  "name": "bartable",
+  "version": "1.0.0",
+  "description": "Planner for bart",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config ./webpack.config.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jshhhh/bartable.git"
+  },
+  "keywords": [
+    "planner",
+    "bart"
+  ],
+  "author": "Justin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jshhhh/bartable/issues"
+  },
+  "homepage": "https://github.com/Jshhhh/bartable#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "vue-loader": "^15.2.4",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
+  }
+}
