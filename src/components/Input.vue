@@ -1,39 +1,46 @@
 <template>
   <div id="input">
+    <p v-bind:style="{color: depart ? 'black' : 'red'}">
     Depart From:
+    </p>
     <select v-model="depart">
       <option disabled value="">Depart From</option>
+      <option>Nearest Station</option>
       <option v-for="(data, key) in stations" :key='key'>{{key}}</option>
     </select>
+    <p v-bind:style="{color: arrive ? 'black' : 'red'}">
     Arrive At:
+    </p>
     <select v-model="arrive">
       <option disabled value="">Arrive At</option>
       <option v-for="(data, key) in stations" :key='key'>{{key}}</option>
     </select>
-    <button v-on:click="getDepartureLocation">Go</button>
+    <button v-on:click="setStation">Go</button>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
 import stations from './stations.js';
 export default {
+  props: {
+    getDepart: Function
+  },
   methods: {
-    getDepartureLocation() {
-      console.log(this.stations[this.depart].abbr, this.stations[this.arrive].abbr);
-      axios.get('http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V&json=y')
-      .then((res) => {
-        
-      }).catch(err => console.log(err));
+    setStation: function() {
+      // if (this.depart === 'Nearest Station') {
+      //   const depart = 'nearby';
+      // } else {
+      //   }
+      const depart = stations[this.depart]
+      this.getDepart({
+        coord:`${depart.gtfs_latitude},${depart.gtfs_longitude}`,
+        orig: depart.abbr
+      });
     }
   },
   data () {
     return {
       stations: stations,
-      departure: {
-        latitude: '',
-        longitude: ''
-      },
       depart: '',
       arrive: ''
     }

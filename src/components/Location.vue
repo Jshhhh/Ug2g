@@ -1,12 +1,9 @@
 <template>
-  <div class="location">
-    <button v-on:click="getLocation">Get Location</button>
-    latitude: {{latitude}}
-    longitude: {{longitude}}
-  </div>
+  
 </template>
 
 <script>
+import key from '../../api.config';
 export default {
   data () {
     return {

@@ -1,14 +1,28 @@
 <template>
   <div id="bar">
-    <h1>Bartable</h1>
+    <h1>Ug2g</h1>
+    <div id="signIn" @click="signIn">
+      Sign In
+      <div id="auth" v-if="signing">
+        Authorizing Page
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
   module.exports = {
-        data() {
-            return {}
+      methods: {
+        signIn() {
+          this.signing = true;
         }
+      },
+      data() {
+        return {
+          signing: false  
+        }
+      }
     }
 </script>
 
@@ -19,6 +33,14 @@
     align-content: center;
     color: white;
     background-color: black;
+    display: flex;
+    justify-content: space-between;
+  }
+  #signIn {
+    cursor: pointer;
+  }
+  #auth {
+    z-index: 10;
   }
 </style>
 
