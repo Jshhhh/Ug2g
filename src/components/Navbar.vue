@@ -1,29 +1,32 @@
 <template>
   <div id="bar">
     <h1>Ug2g</h1>
-    <div id="signIn" @click="signIn">
+    <div id="signIn" @click="signIn" v-if="!signing">
       Sign In
-      <div id="auth" v-if="signing">
-        Authorizing Page
-      </div>
     </div>
-
+    <div id="auth" v-if="signing">
+      <Signin />
+    </div>
   </div>
 </template>
 
 <script>
-  module.exports = {
-      methods: {
-        signIn() {
-          this.signing = true;
-        }
-      },
-      data() {
-        return {
-          signing: false  
-        }
+  import Signin from './Signin.vue';
+  export default {
+    components: {
+      Signin
+    },
+    methods: {
+      signIn() {
+        this.signing = true;
+      }
+    },
+    data() {
+      return {
+        signing: false  
       }
     }
+  }
 </script>
 
 <style scoped>

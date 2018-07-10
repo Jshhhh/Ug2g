@@ -13,7 +13,7 @@
           longitude: {{coord[1]}}
         </div>
       </div>
-      <Input :getDepart="getDepartureLocation"/>
+      <Directions :getDepart="getDepartureLocation"/>
       <div v-if="timeToStation"> 
         Time to walk: {{timeToStation}}
       </div>
@@ -27,13 +27,12 @@
 <script>
   import axios from 'axios';
   import Navbar from './components/Navbar.vue';
-  import Location from './components/Location.vue';
-  import Input from './components/Input.vue';
+  import Directions from './components/Directions.vue';
   import Eta from './components/Eta.vue';
   import station from './components/stations';
   export default {
     name: 'app',
-    components: { Navbar, Location, Input, Eta }, //Register other components
+    components: { Navbar, Directions, Eta }, //Register other components
     methods: {
       getLocation () {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -44,8 +43,8 @@
         axios.get('/directions', {
           params: {
             dept: `${this.coord[0]},${this.coord[1]}`,
-            arri: station.coord,
-            orig: station.orig
+            arri: station ? station.coord : undefined,
+            orig: station ? station.orig : undefined
           }
         }).then(res => {
           this.timeToStation = res.data.tts.duration.text;

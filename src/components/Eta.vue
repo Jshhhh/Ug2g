@@ -15,9 +15,10 @@
     <div id="timeClicked" v-if="timeClicked">
       <h1 id="when" v-if="whenToLeave > 1">
         You should leave in {{whenToLeave}} minutes
+        <Alert :time="whenToLeave"/>
       </h1>
       <h1 id="when" v-else-if="whenToLeave >= 0">
-        Ug2g!
+        U gotta go!
       </h1>
       <h1 id="when" v-else>
         You're not gonna make it
@@ -27,7 +28,11 @@
 </template>
 
 <script>
+import Alert from './Alert.vue';
 export default {
+  components: {
+    Alert
+  },
   props: {
     times: Array,
     time2station: Number,
@@ -52,7 +57,10 @@ export default {
     display: flex;
   }
   #when {
+    display: flex;
     margin-left: 40px;
+    flex-direction: column;
+    align-items: center;
   }
   table {
     border: 2px solid black;
