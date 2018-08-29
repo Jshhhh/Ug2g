@@ -1,8 +1,10 @@
 <template>
   <div>
     <Navbar />
-    <div class="body">
+    <div class="title">
       <h1>Welcome to g2g</h1>
+    </div>
+    <div class="body">
       <div class="location">
         <div id="locWarning" v-if="coord.length === 0">
           Please Get Location
@@ -66,13 +68,21 @@
 </script>
 
 <style scoped>
+  .title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .body {
+    display: flex;
+    margin-left: 20px;
+    justify-content: center;
+    flex-direction: column;
+  }
   .location {
-    margin: 20px;
+    align-self: center;
   }
   #locWarning {
     color: red;
-  }
-  .body {
-    margin-left: 20px;
   }
 </style>

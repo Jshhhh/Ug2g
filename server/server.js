@@ -29,4 +29,6 @@ app.get('/directions', async (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log('server started'));
+app.post('/authenticate')
+
+app.listen(3000, () => console.log('server started at localhost:3000'));

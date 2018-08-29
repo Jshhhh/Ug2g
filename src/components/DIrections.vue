@@ -1,5 +1,6 @@
 <template>
-  <div id="input">
+  <div class="input">
+    <div id="depart">
     <p v-bind:style="{color: depart ? 'black' : 'red'}">
     Depart From:
     </p>
@@ -8,6 +9,8 @@
       <option selected>Nearest Station</option>
       <option v-for="(data, key) in stations" :key='key'>{{key}}</option>
     </select>
+    </div>
+    <div id="arrive">
     <p v-bind:style="{color: arrive ? 'black' : 'red'}">
     Arrive At:
     </p>
@@ -15,6 +18,7 @@
       <option disabled value="">Arrive At</option>
       <option v-for="(data, key) in stations" :key='key'>{{key}}</option>
     </select>
+    </div>
     <button v-on:click="setStation">Go</button>
   </div>
 </template>
@@ -50,5 +54,21 @@ export default {
 </script>
 
 <style scoped>
-
+  .input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #arrive {
+    margin-left: 20px;
+  }
+  button {
+    width: 50px;
+    height: 20px;
+  }
+  select {
+    padding: 10px;
+    border-radius: 0px;
+  }
 </style>

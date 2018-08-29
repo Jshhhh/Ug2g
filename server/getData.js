@@ -3,7 +3,6 @@ const key = require('../api.config.js');
 const station = require('../src/components/stations');
 
 const getDistance = async (depart, arrive) => {
-  console.log(depart, arrive);
   return axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${depart}&destinations=${arrive}&mode=walking&departure_time=now&key=${key.API_KEY}`)
 };
 
@@ -39,7 +38,6 @@ const getNearby = async (coord) => {
     return Promise.all([getDistance(coord, `${gtfs_latitude},${gtfs_longitude}`),
     getEta(abbr)]);
   } catch (err) {
-    console.log(err);
     return err;
   }
 };
@@ -48,4 +46,4 @@ module.exports = {
   getDistance,
   getEta,
   getNearby
-}
+};

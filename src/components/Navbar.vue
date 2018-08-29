@@ -30,6 +30,10 @@
 </script>
 
 <style scoped>
+  h1 {
+    margin-top: 20px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;;
+  }
   #bar {
     height: 40px;
     padding: 10px;
