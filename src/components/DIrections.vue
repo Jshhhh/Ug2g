@@ -61,7 +61,7 @@ export default {
     align-items: center;
   }
   #arrive {
-    margin-left: 20px;
+    margin-left: 40px;
   }
   button {
     width: 50px;
@@ -69,6 +69,5 @@ export default {
   }
   select {
     padding: 10px;
-    border-radius: 0px;
   }
 </style>

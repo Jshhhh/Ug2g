@@ -3,7 +3,7 @@
     <table>
       <tr>
         <th>Destination</th>
-        <th>Times</th>
+        <th colspan="4">Times</th>
       </tr>
       <tr v-for="(elem, index) in times" :key="index">
         <td>{{elem.destination}}</td>
@@ -62,14 +62,9 @@ export default {
     flex-direction: column;
     align-items: center;
   }
-  table {
-    border: 2px solid black;
-  }
-  th {
+  table, th, td {
     border: 1px solid black;
-  }
-  td {
-    border: 1px solid black;
+    border-spacing: 0;
   }
   .time {
     cursor: pointer;
