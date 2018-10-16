@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.dev.js --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --config webpack.config.dev.js",
     "start": "nodemon ./server/server.js"
   },
@@ -40,7 +39,6 @@
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.3",
-    "i": "^0.3.6",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
