@@ -49,6 +49,7 @@
             orig: station ? station.orig : undefined
           }
         }).then(res => {
+          console.log(res)
           this.timeToStation = res.data.tts.duration.text;
           this.minutesToStation = Math.ceil(res.data.tts.duration.value / 60);
           this.eta = res.data.eta[0].etd;
@@ -78,6 +79,7 @@
     margin-left: 20px;
     justify-content: center;
     flex-direction: column;
+    align-content: center;
   }
   .location {
     align-self: center;

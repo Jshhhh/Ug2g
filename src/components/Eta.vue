@@ -18,7 +18,7 @@
         <Alert :time="whenToLeave"/>
       </h1>
       <h1 id="when" v-else-if="whenToLeave >= 0">
-        U gotta go!
+        You gotta go!
       </h1>
       <h1 id="when" v-else>
         You're not gonna make it

@@ -35,8 +35,8 @@ const getNearby = async (coord) => {
   try {
     const currentLocation = coord.split(',').map(elem => JSON.parse(elem));
     const { abbr, gtfs_latitude, gtfs_longitude } = station[getClosestStation(currentLocation)];
-    return Promise.all([getDistance(coord, `${gtfs_latitude},${gtfs_longitude}`),
-    getEta(abbr)]);
+    
+    return Promise.all([getDistance(coord, `${gtfs_latitude},${gtfs_longitude}`), getEta(abbr)]);
   } catch (err) {
     return err;
   }

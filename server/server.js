@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const axios = require('axios');
 const ask = require('./getData');
 
 const app = express();
@@ -29,6 +28,5 @@ app.get('/directions', async (req, res) => {
   });
 });
 
-app.post('/authenticate')
-
-app.listen(3000, () => console.log('server started at localhost:3000'));
+const port = 3000;
+app.listen(port, () => console.log(`server started at localhost:${port}`));

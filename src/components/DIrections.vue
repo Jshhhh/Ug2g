@@ -66,6 +66,7 @@ export default {
   button {
     width: 50px;
     height: 20px;
+    margin: 45px 0 0 20px;
   }
   select {
     padding: 10px;
