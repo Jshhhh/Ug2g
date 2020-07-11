@@ -61,5 +61,4 @@ typings/
 .next
 
 #config
-api.config.js
 dist/
