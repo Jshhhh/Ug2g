@@ -10,7 +10,7 @@ export default {
   methods: {
     addAlert() {
       setTimeout(() => {
-        alert('You gotta go')
+        alert('You should leave now')
       }, this.time * 60000);
     }
   },
