@@ -47,6 +47,8 @@
     cursor: pointer;
   }
   #auth {
+    min-width: min-content;
+    white-space: nowrap;
     z-index: 10;
   }
 </style>
